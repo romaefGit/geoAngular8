@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" [class.active]="classApplied">
+
+        <div class="sidebar-header">
+            <h3>MapBox Angular</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <div class="user">
+                <i class="fa fa-user-o"></i>
+                <p>Camilo Echeverry</p>
+                <span>Beneficiario</span>
+
+            </div>
+            <div *ngFor="let menuItem of menuItems; let i = index;">
+
+                <li *ngIf=" menuItem.active == true" [class.active]="menuItem.active" routerLinkActive="active" class="item {{menuItem.class}}" (click)="activeClass(i)">
+                    <a [routerLink]="menuItem.path" (click)="toggleClass()">
+                        <i class="fa {{menuItem.icon}}"></i>
+                        <p>{{menuItem.title}}</p>
+                    </a>
+                </li>
+
+                <li *ngIf="menuItem.active == false" [class.active]="menuItem.active" routerLinkActive="" class="item {{menuItem.class}}" (click)="activeClass(i)">
+                    <a [routerLink]="menuItem.path" (click)="toggleClass()">
+                        <i class="fa {{menuItem.icon}}"></i>
+                        <p>{{menuItem.title}}</p>
+                    </a>
+                </li>
+            </div>
+           
+        </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="toggleClass()">
+                    <i class="fa fa-bars"></i>
+                    <!-- <span>Toggle Sidebar</span> -->
+                </button>
+        
+            </div>
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+</div>
