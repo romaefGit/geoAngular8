@@ -207,6 +207,16 @@ a.article:hover {
     color: #7386D5;
 }
 
+#sidebar li.social{
+    margin-left: 45px;
+}
+#sidebar ul li.social >  a{
+    font-size: 16px;
+    border-left: 0;
+}
+#sidebar ul li.social > a:hover, a{
+    border-left: 0;
+}
 
 /* ---------------------------------------------------
     MEDIAQUERIES
