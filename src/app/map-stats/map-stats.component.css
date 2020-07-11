@@ -1,8 +1,13 @@
 .statistics{
     margin: 30px;
 }
+.card-header {
+    background: #fdcb6e;
+    color: #fff;
+}
 .infoCards{
     margin: 80px;
+    margin-top: 25px;
 }
 .infoCards .card{
     margin:10px;
@@ -10,7 +15,26 @@
 }
 .infoCards .card .card-text{
     font-size: 12px;
+    margin-bottom: 0px;
 }
+.infoCards .card .card-text strong{
+    color: #fff;
+    background: #fdcb6e;
+    border-radius: 12px;
+    padding: 0px 8px;
+}
+.infoCards .card button{
+    margin-top: 10px;
+}
+.infoCards .btn{
+    background: #7b88ff;
+    border-color: #7b88ff;
+}
+
+.statistics .card{
+    margin-bottom: 30px;
+}
+
 .buttons{
     margin-left: 66px;
     margin-top: 15px;
@@ -29,6 +53,28 @@
 .relative{
     position: relative;
 }
-.fixed{
-    /* position: fixed; */
+.btn{
+    background: #6c5ce7;
+    border-color: #6c5ce7;
+}
+.bigButtons{
+    display: inherit;
+}
+.smallButtons{
+    display: none;
+}
+
+@media screen and (max-width: 600px) { /* small */
+    .infoCards .card{
+        width: 100%;
+    }
+    .infoCards .card .card-text{
+        font-size: 16px;
+    }
+    .bigButtons{
+        display: none;
+    }
+    .smallButtons{
+        display: inherit;
+    }
 }

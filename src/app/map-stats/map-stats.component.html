@@ -1,15 +1,20 @@
-<div class="absolute">
+<div class="absolute" (window:resize)="onResize($event)">
     <app-map class="fixed"></app-map>
 
     <div class="relative">
-        <div class="buttons">
+        <div class="buttons bigButtons">
             <button type="button" class="btn btn-info" (click)="listStatistics()"><i class="fa fa-bar-chart"></i> Statistics</button>
             <button type="button" class="btn btn-info" (click)="listCommerce()"><i class="fa fa-handshake-o"></i> Commerce</button>
+        </div>
+
+        <div class="buttons smallButtons">
+            <button type="button" class="btn btn-info" (click)="listStatistics()"><i class="fa fa-bar-chart"></i></button>
+            <button type="button" class="btn btn-info" (click)="listCommerce()"><i class="fa fa-handshake-o"></i></button>
         </div>
     </div>
     
     <div class="relative" >
-        <div *ngIf="showStatistics" class="row statistics">
+        <div *ngIf="showStatistics" class="row statistics" >
             
             <div class="col-sm-12 col-md-6 col-lg-8">
                 <div class="card">
@@ -17,7 +22,7 @@
                     <div class="card-body">
                         <!-- <h5 class="card-title">Sales by commerce</h5> -->
                         <p class="card-text">This show by commerce the sales that they had.</p>
-                        <canvas id="salesChartLine" width="400" height="200"></canvas>
+                        <canvas id="salesChartLine" width="{{sizeCanvasLine.width}}" height="{{sizeCanvasLine.height}}"></canvas>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
@@ -41,22 +46,22 @@
                 <div class="card-body">
                     <h5 class="card-title"></h5>
                     <p class="card-text text-left">
-                        <strong>Nit:</strong> {{com.nit}}
+                        <strong>Nit</strong> {{com.nit}}
                     </p>
                     <p class="card-text text-left">
-                        <strong>Adress:</strong> {{com.address}}
+                        <strong>Adress</strong> {{com.address}}
                     </p>
                     <p class="card-text text-left">
-                        <strong>Phone:</strong> {{com.phone}}
+                        <strong>Phone</strong> {{com.phone}}
                     </p>
                     <p class="card-text text-left">
-                        <strong>Owner:</strong> {{com.owner}}
+                        <strong>Owner</strong> {{com.owner}}
                     </p>
                     <p class="card-text text-left">
-                        <strong>Schedule:</strong> {{com.schedule}}
+                        <strong>Days</strong> {{com.days}}
                     </p>
                     <p class="card-text text-left">
-                        <strong>Days:</strong> {{com.days}}
+                        <strong>Schedule</strong> {{com.schedule}}
                     </p>
                     <button class="btn btn-info btn-block" (click)="showLocationOnMap(com.id)">Watch location</button>
                 </div>

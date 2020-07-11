@@ -1,13 +1,4 @@
-/*
-    DEMO STYLE
-*/
-
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-}
-
 p {
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
@@ -60,11 +51,11 @@ a:focus {
     min-width: 250px;
     max-width: 250px;
     background: #fff;
-    color: #55BAE7;
+    color: #6c5ce7;
     transition: all 0.3s;
     z-index: 2;
     background: #fff;
-    border-right: 1px solid #55BAE7;
+    border-right: 1px solid #6c5ce7;
 }
 
 #sidebar.active {
@@ -74,18 +65,18 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #55BAE7;
+    background: #6c5ce7;
     color: #fff;
     text-align: center;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #7b88ff;
 }
 
 #sidebar ul p {
-    color: #396d7d;
+    color: #404142;
     padding: 0px;
 }
 
@@ -101,22 +92,22 @@ a:focus {
 }
 #sidebar ul li >a,
 a[aria-expanded="true"]{
-    color: #396d7d;
+    color: #7b88ff;
     background: #fff;
-    border-left: 8px solid #396d7d;
+    border-left: 8px solid #7b88ff;
 }
 #sidebar ul li >a:hover,
 a[aria-expanded="true"]:hover{
-    color: #3eafd1;
+    color: #6c5ce7;
     background: #fff;
-    border-left: 8px solid #3eafd1;
+    border-left: 8px solid #6c5ce7;
 }
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #55BAE7;
+    color: #6c5ce7;
     
     background: #fff;
-    border-left: 8px solid #55BAE7;
+    border-left: 8px solid #6c5ce7;
 }
 #sidebar ul li.item p {
     position: relative;
@@ -135,7 +126,7 @@ a[aria-expanded="true"] {
 }
 #sidebar .user i{
     font-size: 4rem;
-    color: #76a3c2;
+    color: #b3b6b9;
 }
 #sidebar .user p{
     margin-bottom: -3px;
@@ -148,8 +139,8 @@ a[aria-expanded="true"] {
     position: absolute;
     top: 16px;
     z-index: 8;
-    background-color: #55BAE7;
-    border: 1px solid #55BAE7;
+    background-color: #6c5ce7;
+    border: 1px solid #6c5ce7;
     left: -5px;
 }
 #sidebarCollapse:focus{
@@ -215,6 +206,7 @@ a.article:hover {
     background: #fff;
     color: #7386D5;
 }
+
 
 /* ---------------------------------------------------
     MEDIAQUERIES

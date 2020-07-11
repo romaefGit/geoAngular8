@@ -8,8 +8,8 @@ declare interface RouteInfo {
     active:boolean;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/map-stats', title: 'Map statistics',  icon:'fa-plane', class: '', active:true},
-    { path: '/dashboard', title: 'dashboard',  icon:'fa-plane', class: '', active:false},
+    { path: '/map-stats', title: 'Map statistics',  icon:'fa-bar-chart', class: '', active:true},
+    { path: '/dashboard', title: 'dashboard',  icon:'fa-home', class: '', active:false},
 ];
 @Component({
   selector: 'app-sidebar',

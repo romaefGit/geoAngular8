@@ -11,13 +11,13 @@ export class MapService {
   map: mapboxgl.Map;
   style = `mapbox://styles/mapbox/streets-v11`;
 
-  // Coordenadas de la localización donde queremos centrar el mapa
+  // initial Coordinates 
   lat = 4.6240716;
   lng = -74.1509265;
   zoom = 15;
 
   constructor() {
-    // Asignamos el token desde las variables de entorno
+    // Adding the token of MapBox
     this.mapbox.accessToken = environment.mapBoxToken;
   }
   

@@ -3,6 +3,7 @@ import { MapService } from '@core/services/map.service';
 import { CommerceService } from '../services/commerce.service';
 import Chart from 'chart.js';
 import randomColor from 'randomcolor';
+declare const $: any;
 
 @Component({
   selector: 'app-map-stats',
@@ -15,12 +16,19 @@ export class MapStatsComponent implements OnInit {
   commercesGraph: any;
   showCommerce: boolean;
   showStatistics: boolean;
+  sizeCanvasLine: object = {
+    width: 400,
+    height: 200
+  }
 
   constructor(private map: MapService, private commerceService: CommerceService) { }
 
   ngOnInit() {
     this.map.buildMap(); // Build the initial map
     this.listCommercesLayer();
+    this.isMobileMenu();
+    this.listStatistics();
+
   }
 
   /**
@@ -107,17 +115,17 @@ export class MapStatsComponent implements OnInit {
     let groupNames = ['labels','values'];
     let dataToChart = this.separateValues(graphData, properties, groupNames); // data for the chart JSON
 
-    var colorsInside = randomColor({ // Colors random of green light pallete
+    var colorsInside = randomColor({ // Colors random of blue light pallete
       luminosity: 'light',
       count: dataToChart['labels'].length,
-      hue: 'green',
+      hue: 'blue',
       format: 'rgb' // e.g. 'rgb(225,200,20)'
     });  
 
-    var colorsBorder = randomColor({ // Colors random of green dark pallete
+    var colorsBorder = randomColor({ // Colors random of blue dark pallete
       luminosity: 'dark',
       count: dataToChart['labels'].length,
-      hue: 'green',
+      hue: 'blue',
       format: 'rgb' // e.g. 'rgb(225,200,20)'
     });
 
@@ -223,6 +231,25 @@ export class MapStatsComponent implements OnInit {
         }
       })
     })
+  }
+
+  // util functions
+  isMobileMenu() {
+    if ($(window).width() < 991) {
+      this.sizeCanvasLine = {
+        width: 400,
+        height: 600
+      }
+    }else{
+      this.sizeCanvasLine = {
+        width: 400,
+        height: 200
+      }
+    }
+  };
+
+  onResize(event) {
+    this.isMobileMenu();
   }
 
 
