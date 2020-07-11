@@ -8,3 +8,13 @@
     color: #58d6b9;
     margin-top: 20%;
 }
+
+.statistics{
+    margin: 30px;
+}
+.infoCards{
+    margin: 30px;
+}
+.infoCards .card{
+    margin:10px
+}

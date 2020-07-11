@@ -8,7 +8,7 @@ declare interface RouteInfo {
     active:boolean;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/map-stats', title: 'Statistics',  icon:'fa-plane', class: '', active:true},
+    { path: '/map-stats', title: 'Map statistics',  icon:'fa-plane', class: '', active:true},
     { path: '/dashboard', title: 'dashboard',  icon:'fa-plane', class: '', active:false},
 ];
 @Component({
@@ -29,6 +29,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
+  
   isMobileMenu() {
       if ($(window).width() > 991) {
           return false;

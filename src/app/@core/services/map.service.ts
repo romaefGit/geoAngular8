@@ -32,4 +32,17 @@ export class MapService {
 
     this.map.addControl(new mapboxgl.NavigationControl());
   }
+
+  putMark(lat, lng){
+    this.map.flyTo({
+      center: [
+        lng,
+        lat
+      ],
+      essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    });
+    var marker = new mapboxgl.Marker()
+    .setLngLat([lng, lat])
+    .addTo(this.map);
+  }
 }

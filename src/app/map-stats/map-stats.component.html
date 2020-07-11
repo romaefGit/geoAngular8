@@ -1,1 +1,66 @@
-<app-map></app-map>
+<div class="absolute">
+    <app-map class="fixed"></app-map>
+
+    <div class="relative">
+        <div class="buttons">
+            <button type="button" class="btn btn-info" (click)="listStatistics()"><i class="fa fa-bar-chart"></i> Statistics</button>
+            <button type="button" class="btn btn-info" (click)="listCommerce()"><i class="fa fa-handshake-o"></i> Commerce</button>
+        </div>
+    </div>
+    
+    <div class="relative" >
+        <div *ngIf="showStatistics" class="row statistics">
+            
+            <div class="col-sm-12 col-md-6 col-lg-8">
+                <div class="card">
+                    <h5 class="card-header">Sales by commerce curve</h5>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Sales by commerce</h5> -->
+                        <p class="card-text">This show by commerce the sales that they had.</p>
+                        <canvas id="salesChartLine" width="400" height="200"></canvas>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <h5 class="card-header">Sales by commerce</h5>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Sales by commerce</h5> -->
+                        <p class="card-text">This show by commerce the sales that they had.</p>
+                        <canvas id="salesChart" width="400" height="400"></canvas>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div *ngIf="showCommerce" class="row infoCards d-flex justify-content-start">
+            <div class="card" *ngFor="let com of commerces">
+                <h5 class="card-header">{{com.name}}</h5>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text text-left">
+                        <strong>Nit:</strong> {{com.nit}}
+                    </p>
+                    <p class="card-text text-left">
+                        <strong>Adress:</strong> {{com.address}}
+                    </p>
+                    <p class="card-text text-left">
+                        <strong>Phone:</strong> {{com.phone}}
+                    </p>
+                    <p class="card-text text-left">
+                        <strong>Owner:</strong> {{com.owner}}
+                    </p>
+                    <p class="card-text text-left">
+                        <strong>Schedule:</strong> {{com.schedule}}
+                    </p>
+                    <p class="card-text text-left">
+                        <strong>Days:</strong> {{com.days}}
+                    </p>
+                    <button class="btn btn-info btn-block" (click)="showLocationOnMap(com.id)">Watch location</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

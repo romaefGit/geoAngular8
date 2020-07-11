@@ -60,9 +60,11 @@ a:focus {
     min-width: 250px;
     max-width: 250px;
     background: #fff;
-    color: #396d7d;
+    color: #55BAE7;
     transition: all 0.3s;
     z-index: 2;
+    background: #fff;
+    border-right: 1px solid #55BAE7;
 }
 
 #sidebar.active {
@@ -72,7 +74,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #58d6b9;
+    background: #55BAE7;
     color: #fff;
     text-align: center;
 }
@@ -111,10 +113,10 @@ a[aria-expanded="true"]:hover{
 }
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #58d6b9;
+    color: #55BAE7;
     
     background: #fff;
-    border-left: 8px solid #58d6b9;
+    border-left: 8px solid #55BAE7;
 }
 #sidebar ul li.item p {
     position: relative;
@@ -146,8 +148,8 @@ a[aria-expanded="true"] {
     position: absolute;
     top: 16px;
     z-index: 8;
-    background-color: #58d6b9;
-    border: 1px solid #58d6b9;
+    background-color: #55BAE7;
+    border: 1px solid #55BAE7;
     left: -5px;
 }
 #sidebarCollapse:focus{
