@@ -16,7 +16,7 @@ export class MapStatsComponent implements OnInit {
   commercesGraph: any;
   showCommerce: boolean;
   showStatistics: boolean;
-  sizeCanvasLine: object = {
+  sizeCanvasLine: any = {
     width: 400,
     height: 200
   }
@@ -28,7 +28,6 @@ export class MapStatsComponent implements OnInit {
     this.listCommercesLayer();
     this.isMobileMenu();
     this.listStatistics();
-
   }
 
   /**

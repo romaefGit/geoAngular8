@@ -130,6 +130,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "geoAngular"
+    }
+  },
+  "defaultProject": "geoAngular",
+  "cli": {
+    "analytics": false
+  }
 }
