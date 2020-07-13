@@ -20,8 +20,6 @@ export class MapStatsComponent implements OnInit {
   statusOptionStats:boolean;
   statusOptionCommerce:boolean;
 
-  animateLocationBtn: boolean;
-
   sizeCanvasLine: any = {
     width: 400,
     height: 200

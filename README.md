@@ -27,10 +27,16 @@ Special thanks go to:
 | --- | --- |
 | [![Bootstrap 4](https://jquery-plugins.net/image/plugin/bootstrap-4-the-most-popular-html-css-and-js-library.jpg)]()  | [![Angular](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/300px-Angular_full_color_logo.svg.png)]()
 
+## DEMO
+
+You can see the demo working on the next link [geoAngular8](https://geoangular8.web.app/) and if you liked, give me a star on the [Respossitory](https://github.com/RomarioAugustoEstradaFlorez/geoAngular8) 
+
 ## Quick start
 
-Create an account on MapBox and use your own APIkey that they will give you to use them services of maps.
-- Open this file `src/enviroments/enviroments.ts` and modify the next property: `mapBoxToken:'YOUR_API_map_box_KEY'`
+Create an account on [MapBox](https://docs.mapbox.com/help/how-mapbox-works/) and use your own APIkey that they will give you to use them services of maps.
+- Open this file of stage `src/enviroments/enviroments.ts` and modify the next property: `mapBoxToken:'YOUR_API_map_box_KEY'`
+
+- Open this file of production `src/enviroments/enviroments.prod.ts` and modify the next property: `mapBoxToken:'YOUR_API_map_box_KEY'`
 
 Clone the repo: 
 - `git clone https://github.com/RomarioAugustoEstradaFlorez/geoAngular8`
@@ -55,20 +61,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-### Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-### Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
 ### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-
-
 
 
 ## File Structure
