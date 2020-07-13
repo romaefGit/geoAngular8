@@ -1,22 +1,22 @@
 <div class="absolute" (window:resize)="onResize($event)">
     <app-map class="fixed"></app-map>
 
-    <div class="relative">
+    <div class="relative animate__animated animate__bounceInRight">
         <div class="buttons bigButtons">
-            <button type="button" class="btn btn-info" (click)="listStatistics()"><i class="fa fa-bar-chart"></i> Statistics</button>
-            <button type="button" class="btn btn-info" (click)="listCommerce()"><i class="fa fa-handshake-o"></i> Commerce</button>
+            <button type="button" [ngClass]="statusOptionStats ? 'active' : ''" class="btn btn-info" (click)="listStatistics()"><i class="fa fa-bar-chart"></i> Statistics</button>
+            <button type="button" [ngClass]="statusOptionCommerce ? 'active' : ''" class="btn btn-info" (click)="listCommerce()"><i class="fa fa-handshake-o"></i> Commerce</button>
         </div>
 
         <div class="buttons smallButtons">
-            <button type="button" class="btn btn-info" (click)="listStatistics()"><i class="fa fa-bar-chart"></i></button>
-            <button type="button" class="btn btn-info" (click)="listCommerce()"><i class="fa fa-handshake-o"></i></button>
+            <button type="button" [ngClass]="statusOptionStats ? 'active' : ''" class="btn btn-info" (click)="listStatistics()"><i class="fa fa-bar-chart"></i></button>
+            <button type="button" [ngClass]="statusOptionCommerce ? 'active' : ''" class="btn btn-info" (click)="listCommerce()"><i class="fa fa-handshake-o"></i></button>
         </div>
     </div>
     
     <div class="relative" >
-        <div *ngIf="showStatistics" class="row statistics" >
+        <div *ngIf="showStatistics" class="row statistics animate__animated animate__pulse" >
             
-            <div class="col-sm-12 col-md-6 col-lg-8">
+            <div class=" col-sm-12 col-md-6 col-lg-8">
                 <div class="card">
                     <h5 class="card-header">Sales by commerce curve</h5>
                     <div class="card-body">
@@ -40,9 +40,9 @@
             </div>
             
         </div>
-        <div *ngIf="showCommerce" class="row infoCards d-flex justify-content-start">
+        <div *ngIf="showCommerce" class="row infoCards d-flex justify-content-start animate__animated animate__pulse">
             <div class="card" *ngFor="let com of commerces">
-                <h5 class="card-header">{{com.name}}</h5>
+                <h5 [ngClass]="com.active ? 'active' : ''" class="card-header"><i *ngIf="com.active" class="fa fa-check"></i> {{com.name}}</h5>
                 <div class="card-body">
                     <h5 class="card-title"></h5>
                     <p class="card-text text-left">
@@ -63,7 +63,7 @@
                     <p class="card-text text-left">
                         <strong>Schedule</strong> {{com.schedule}}
                     </p>
-                    <button class="btn btn-info btn-block" (click)="showLocationOnMap(com.id)">Watch location</button>
+                    <button class="btn btn-info btn-block animate__animated" hover-class="animate__pulse" (click)="showLocationOnMap(com.id)">Watch location</button>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MapService } from '@core/services/map.service';
 import { CommerceService } from '../services/commerce.service';
 import Chart from 'chart.js';
@@ -16,6 +16,12 @@ export class MapStatsComponent implements OnInit {
   commercesGraph: any;
   showCommerce: boolean;
   showStatistics: boolean;
+
+  statusOptionStats:boolean;
+  statusOptionCommerce:boolean;
+
+  animateLocationBtn: boolean;
+
   sizeCanvasLine: any = {
     width: 400,
     height: 200
@@ -28,6 +34,7 @@ export class MapStatsComponent implements OnInit {
     this.listCommercesLayer();
     this.isMobileMenu();
     this.listStatistics();
+    this.listCommerces();
   }
 
   /**
@@ -35,8 +42,9 @@ export class MapStatsComponent implements OnInit {
    */
   listCommerce(){
     this.showCommerce = !this.showCommerce;
+    this.statusOptionCommerce = true;
+    this.statusOptionStats = false;
     this.showStatistics = false;
-    this.listCommerces();
   }
 
   /**
@@ -44,6 +52,8 @@ export class MapStatsComponent implements OnInit {
    */
   listStatistics(){
     this.showStatistics = !this.showStatistics;
+    this.statusOptionStats = true;
+    this.statusOptionCommerce = false;
     this.showCommerce = false;
     this.drawStatsGraph();
   }
@@ -64,6 +74,14 @@ export class MapStatsComponent implements OnInit {
     }
     this.map.putMark(coordinates.lng, coordinates.lat);
     this.showCommerce = false;
+    for (let index = 0; index < this.commerces.length; index++) {
+      var commerce = this.commerces[index];
+      if(commerce.id == idCommerce){
+        this.commerces[index]['active'] = true;
+      }else{
+        this.commerces[index]['active'] = false;
+      }
+    }
     // console.log('coordinates > ',coordinates)
   }
 
@@ -198,7 +216,17 @@ export class MapStatsComponent implements OnInit {
       this.commerceService.getCommerces().subscribe((res)=>{
         if(res != null && res != [] && res != ''){
           // console.log('res > ',res);
+
           this.commerces = res;
+
+          for (let index = 0; index < this.commerces.length; index++) {
+            // const commerce = this.commerces[index];
+            if(index == 0){
+              this.commerces[index]['active'] = true;
+            }else{
+              this.commerces[index]['active'] = false;
+            }
+          }
         }
       })
   }
@@ -237,7 +265,7 @@ export class MapStatsComponent implements OnInit {
     if ($(window).width() < 991) {
       this.sizeCanvasLine = {
         width: 400,
-        height: 600
+        height: 500
       }
     }else{
       this.sizeCanvasLine = {
@@ -251,5 +279,6 @@ export class MapStatsComponent implements OnInit {
     this.isMobileMenu();
   }
 
+  animationButtonLocation: string = 'animate__pulse';
 
 }

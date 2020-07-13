@@ -9,6 +9,7 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { MapStatsComponent } from '../../map-stats/map-stats.component';
 import { MapComponent } from '../../@core/components/map/map.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
+import { HoverClassDirective } from '../../hover-class.directive';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { SidebarComponent } from '../../components/sidebar/sidebar.component';
   declarations: [
     DashboardComponent,
     MapStatsComponent,
-    MapComponent
+    MapComponent,
+    HoverClassDirective
   ],
   exports: [
     DashboardComponent,

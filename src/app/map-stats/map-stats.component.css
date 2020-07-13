@@ -60,8 +60,25 @@
 .bigButtons{
     display: inherit;
 }
+.bigButtons button{
+    height: 50px;
+    /* width: 50px; */
+}
 .smallButtons{
     display: none;
+}
+.smallButtons button{
+    height: 50px;
+    width: 50px;
+}
+.buttons button:not(:disabled):not(.disabled).active, button:not(:disabled):not(.disabled):active, .show > button.dropdown-toggle {
+    color: #fff;
+    background-color: #fdcb6e;
+    border-color: #fdcb6e;
+}
+.card-header.active {
+    background: #6c5ce7;
+    color: #fff;
 }
 
 @media screen and (max-width: 600px) { /* small */
