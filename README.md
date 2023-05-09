@@ -123,10 +123,6 @@ Licensed under MIT
 
 ##### Social Media
 #
-Web Page: <http://www.romaef.com>
+Web Page: <https://romaef.web.app/>
 
 Twitter: <https://twitter.com/romaestradaflo>
-
-Facebook: <https://www.facebook.com/romaef/>
-
-Instagram: <https://www.instagram.com/romaef_/>
